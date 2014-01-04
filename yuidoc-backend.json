@@ -1,0 +1,11 @@
+{
+    "name": "ais2",
+    "description": "AIS Website",
+    "version": "0.0.0",
+    "url": "https://github.com/smadera/ais2",
+    "options": {
+        "paths": ".",
+        "outdir": "yuidocs/backend",
+        "exclude": "node_modules,public,src"
+    }
+}
