@@ -132,7 +132,8 @@
 					"margin-padding.less",
 					"layout-animate.less",
 					"list.less",
-					"pop-up.less"
+					"pop-up.less",
+					"ais/aisweb.less"
 				]
 			}
 		},
@@ -256,6 +257,17 @@
 											"footer-flex.less"
 										]
 									}
+								},
+								{
+									"name": "header-dropdown",
+									"files": {
+										"html": [
+											"header-dropdown.html"
+										],
+										"less": [
+											"header-dropdown.less"
+										]
+									}
 								}
 							]
 						},
@@ -353,6 +365,20 @@
 								],
 								"testUnit": [
 									"layout.spec.js"
+								]
+							}
+						},
+						{
+							"name": "aispage",
+							"files": {
+								"js": [
+									"aispage.js"
+								],
+								"less": [
+									"aispage.less"
+								],
+								"testUnit": [
+									"aispage.spec.js"
 								]
 							}
 						}
@@ -573,6 +599,210 @@
 									}
 								}
 							]
+						},
+						{
+							"name": "about",
+							"files": {
+								"js": [
+									"AboutCtrl.js"
+								],
+								"html": [
+									"about.html"
+								],
+								"less": [
+									"about.less"
+								],
+								"testUnit": [
+									"AboutCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "autoScanners",
+							"files": {
+								"js": [
+									"AutoScannersCtrl.js"
+								],
+								"html": [
+									"autoScanners.html"
+								],
+								"less": [
+									"autoScanners.less"
+								],
+								"testUnit": [
+									"AutoScannersCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "blades",
+							"files": {
+								"js": [
+									"BladesCtrl.js"
+								],
+								"html": [
+									"blades.html"
+								],
+								"less": [
+									"blades.less"
+								],
+								"testUnit": [
+									"BladesCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "contact",
+							"files": {
+								"js": [
+									"ContactCtrl.js"
+								],
+								"html": [
+									"contact.html"
+								],
+								"less": [
+									"contact.less"
+								],
+								"testUnit": [
+									"ContactCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "corrosion",
+							"files": {
+								"js": [
+									"CorrosionCtrl.js"
+								],
+								"html": [
+									"corrosion.html"
+								],
+								"less": [
+									"corrosion.less"
+								],
+								"testUnit": [
+									"CorrosionCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "manualScanners",
+							"files": {
+								"js": [
+									"ManualScannersCtrl.js"
+								],
+								"html": [
+									"manualScanners.html"
+								],
+								"less": [
+									"manualScanners.less"
+								],
+								"testUnit": [
+									"ManualScannersCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "photos",
+							"files": {
+								"js": [
+									"PhotosCtrl.js"
+								],
+								"html": [
+									"photos.html"
+								],
+								"less": [
+									"photos.less"
+								],
+								"testUnit": [
+									"PhotosCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "preview",
+							"files": {
+								"js": [
+									"PreviewCtrl.js"
+								],
+								"html": [
+									"preview.html"
+								],
+								"less": [
+									"preview.less"
+								],
+								"testUnit": [
+									"PreviewCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "systems",
+							"files": {
+								"js": [
+									"SystemsCtrl.js"
+								],
+								"html": [
+									"systems.html"
+								],
+								"less": [
+									"systems.less"
+								],
+								"testUnit": [
+									"SystemsCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "tofdmc",
+							"files": {
+								"js": [
+									"TofdmcCtrl.js"
+								],
+								"html": [
+									"tofdmc.html"
+								],
+								"less": [
+									"tofdmc.less"
+								],
+								"testUnit": [
+									"TofdmcCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "turbine",
+							"files": {
+								"js": [
+									"TurbineCtrl.js"
+								],
+								"html": [
+									"turbine.html"
+								],
+								"less": [
+									"turbine.less"
+								],
+								"testUnit": [
+									"TurbineCtrl.spec.js"
+								]
+							}
+						},
+						{
+							"name": "videos",
+							"files": {
+								"js": [
+									"VideosCtrl.js"
+								],
+								"html": [
+									"videos.html"
+								],
+								"less": [
+									"videos.less"
+								],
+								"testUnit": [
+									"VideosCtrl.spec.js"
+								]
+							}
 						}
 					]
 				}

@@ -167,6 +167,90 @@ config(['$routeProvider', '$locationProvider', 'appConfigProvider', '$compilePro
 	
 	//yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
 	//end: yeoman generated routes here - DO NOT DELETE THIS COMMENT AS IT IS USED BY YEOMAN TO GENERATE A NEW ROUTE!
+	$routeProvider.when(appPathRoute+'about', {templateUrl: pagesPath+'about/about.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+	$routeProvider.when(appPathRoute+'autoScanners', {templateUrl: pagesPath+'autoScanners/autoScanners.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+	$routeProvider.when(appPathRoute+'blades', {templateUrl: pagesPath+'blades/blades.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+	$routeProvider.when(appPathRoute+'contact', {templateUrl: pagesPath+'contact/contact.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+	$routeProvider.when(appPathRoute+'corrosion', {templateUrl: pagesPath+'corrosion/corrosion.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+	$routeProvider.when(appPathRoute+'manualScanners', {templateUrl: pagesPath+'manualScanners/manualScanners.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+	$routeProvider.when(appPathRoute+'photos', {templateUrl: pagesPath+'photos/photos.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+	$routeProvider.when(appPathRoute+'preview', {templateUrl: pagesPath+'preview/preview.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+	$routeProvider.when(appPathRoute+'systems', {templateUrl: pagesPath+'systems/systems.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+	$routeProvider.when(appPathRoute+'tofdmc', {templateUrl: pagesPath+'tofdmc/tofdmc.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+	$routeProvider.when(appPathRoute+'turbine', {templateUrl: pagesPath+'turbine/turbine.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
+	$routeProvider.when(appPathRoute+'videos', {templateUrl: pagesPath+'videos/videos.html',
+		resolve: {
+			auth: function(appAuth) {
+				return appAuth.checkSess({});
+			}
+		}
+	});
 	
 
 	/**
