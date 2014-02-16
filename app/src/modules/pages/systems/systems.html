@@ -1,0 +1,159 @@
+<div class='productsub-media-query' ng-controller='SystemsCtrl'>
+	<div id="aisystem0">
+		<br/>
+		<br/>
+		<h3 class='productsub-header'>Systems</h3>
+		<br/>
+	</div>
+	<div ng-repeat='aisys in aisystems'>
+		<div class='flexbox'>
+			<div class='flex1'>&nbsp;</div>
+			<h4 class='productsub-header'><a ng-click="gotoAnchor('{{aisys.index}}')">{{aisys.title}}</a></h4>
+			<div class='flex1'>&nbsp;</div>
+		</div>
+	</div> <!-- ng-repeat -->
+	<div style='text-align:center; height:100%;'>
+		<div ng-repeat='aisys in aisystems'>
+			<div class='productsub-block' id="{{aisys.index}}">
+				<h5 class='productsub-sub-header'>{{aisys.title}}</h5>
+				<div>				
+					<div class='productsub-text'><div ng-bind-html="aisys.text"></div></div>
+					<div class='flexbox'>
+						<div class='flex1'>&nbsp;</div>
+						<div class='productsub-image'>
+							<img ng-src='{{aisys.image}}'>
+						</div>
+						<div class='flex1'>&nbsp;</div>
+						<div class='productsub-list'>
+							<p style='text-align: left;'><strong>Product Features:</strong></p>
+							<ol>
+								<div ng-repeat='item in aisys.features'>
+									<li><div ng-bind-html="item.spec"></div></li>
+								</div> <!-- ng-repeat -->
+							</ol>
+						</div> <!-- productsub-list -->
+					</div> <!-- flexbox -->
+				</div>
+				<h5 class='productsub-sub-header'><a ng-click="gotoAnchor('aisystem0')">Go to Top of Page</a></h5>
+			</div> <!-- productsub-block -->
+		</div> <!-- ng-repeat -->
+	</div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<h5 class='productsub-header'><abbr title="Automated Inspection Systems, Inc.">AIS</abbr> System Specifications</h5>
+	<br/>
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Hardware</p>
+		Fully functional windows based computer<br/>
+		1, 8, 16 or 24 channel systems<br/>
+		Each channel has both pulser and receiver<br/>
+		Each channel has 2 transducer connectors<br/>
+	</div> 	
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Enclosure</p>
+		Industrial grade enclosures<br/>
+		Reuseable shipping containers<br/>
+		100 – 240V, 50 – 60 Hz AC<br/>
+		Battery powered option<br/>
+	</div>
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Transducer Frequencies</p>
+		0.5 MHz - 10.0 MHz Probes<br/>
+		Acquire Linear or Log data<br/>
+		Test Modes: PE, T/R, TOFD, Thru Transmission<br/>
+		Single or Dual Element Probes<br/>
+	</div>
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Software</p>
+		Data Calibration and Acquisition<br/>
+		Data Display and Analysis<br/>
+		Fully automated Scanner Control<br/>
+		Angle Beam and Curve Correction<br/>
+		Integrated Report Generation<br/>
+		Raw LOG data capture<br/>
+		Windows 7 Operating System<br/>
+	</div> 	
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Displays</p>
+		Multichannel A, B, C, D Scan; Stacked A-scan<br/>
+		Combine displays from several scans<br/>
+		Correlate displays from multiple channels<br/>
+		Weld geometry overlay<br/>
+		Curve correction and Donut Map<br/>
+		Frequency spectrum<br/>
+		Dynamic Gain Adjustment<br/>
+	</div>
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Accessories</p>
+		Variety of Integrated Scanners<br/>
+		Transducers and Wedges<br/>
+		All Required Cabling<br/>
+		Calibration Blocks<br/>
+		Couplant Tank and hoses<br/>
+		Reuseable Shipping Containers<br/>
+		Training and Support<br/>
+	</div>
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Digitizer</p>
+		125 MHz 14 Bit Resolution<br/>
+		Sample points: up to 32K samples<br/>
+		Range: 32 – 32K samples<br/>
+		Delay: 0 – 32K samples<br/>
+		Trigger: External or Software control<br/>
+	</div>
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Pulser</p>
+		Negative square wave pulse: -150 to -300 Volts<br/>
+		Width: 70 nS to 1500 nS<br/>
+		Fall time less than 10 nS<br/>
+		Impedance 50 or 500 ohms<br/>
+		8000 Hz Rep Rate with external trigger<br/>
+	</div> 	
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Receiver</p>
+		Gain 0-100 dB, 0.1 dB steps or keyboard entry<br/>
+		Max input signal 10v peak to peak<br/>
+		SNR 90 db Log Amplification<br/>
+		Bandwidth 300 KHz to 28 MHz<br/>
+		Rectification: RF, Full, +Half, -Half<br/>
+	</div> 	
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Gates</p>
+		12 individual gates, both Amplitude and Depth<br/>
+		Fixed delay or front surface interface mode<br/>
+		Variety of selectable Algorithms<br/>
+		Gates can be added / changed during analysis<br/>
+	</div> 	
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Detection / Analysis Software</p>
+		Band Pass and Standing Wave Filter<br/>
+		ATD (Automatic Target Detection)<br/>
+		Flaw Proximity Algorithm (Nearest Neighbor Grouping)<br/>
+		Safer / Finite Element Life Assessment Output Files<br/>
+	</div>
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Material Velocity</p>
+		One point calibration function<br/>
+		Two point calibration function<br/>
+		Full velocity range adjustment<br/>
+		Units: in/S, in/uS, ft/S, m/S<br/>
+	</div>
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Reject</p>
+		Full linear control to 100% screen height<br/>
+	</div>
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>Real Time Wave Form Averaging</p>
+		2, 4, 8, 16, 32, 64 128 or 256 waveforms<br/>
+	</div>
+	<div class='productsub-specs'>
+		<p class='productsub-specs-header'>DAC</p>
+		128 points, 100 dB range and slew rate<br/>
+	</div>
+	<br/>
+	<br/>
+</div>

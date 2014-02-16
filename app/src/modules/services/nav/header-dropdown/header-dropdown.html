@@ -1,0 +1,45 @@
+<div class='nav-header flexbox padding-lr {{nav.classes.cont}}'>
+	<div class='inline-block h3 padding-lr'>
+		<!--{{appTitle}}-->
+		<!-- current header is 45 px high so maintain proper aspect ratio -->
+		<!-- AISlogo.bmp is 110 x  95 pixels so ( 95 / 45) = 2.11 so 52 x 45 --> 
+		<!-- AISlogo.jpg is 417 x 309 pixels so (309 / 45) = 6.87 so 61 x 45 -->
+		<!-- AISlogo.png is 158 x  93 pixels so ( 93 / 45) = 2.07 so 77 x 45 -->
+		<!-- <img ng-src='{{appPathImg}}/AISlogo.bmp' style='width:50px; height:44px;' /> -->
+		<!-- <img ng-src='{{appPathImg}}/AISlogo.jpg' style='width:60px; height:44px;' /> -->
+		<!-- <img ng-src='{{appPathImg}}/AISlogo.png' style='width:75px; height:44px;' /> -->
+		<img ng-src='{{appPathImg}}/AISlogo.png' style='width:75px; height:44px;'/>
+	</div>
+	<div class='nav-header-left-cont {{nav.title.classes.cont}}'>
+		<div class='inline-block h5 padding-lr nav-header-logo'>
+			<!--{{appTitle}}-->
+			<div style='padding-top: 1em;'>Automated Inspection Systems, Inc.</div>
+		</div>
+		<div ng-repeat='button in nav.buttons.left' class='inline-block nav-header-button-cont {{button.classes.cont}}'>
+			<a ng-if='button.href' class='nav-header-button' ng-href = '{{button.href}}' ng-bind-html='button.html'></a>
+			<div ng-if='button.click' class='nav-header-button' ng-click = 'button.click()' ng-bind-html='button.html'></div>
+			<div ng-if='button.dropdown && button.dropdown.buttons && button.dropdown.buttons.length >0' ng-click='button.dropdown.visible =!button.dropdown.visible' class='nav-header-button btn-link' ng-bind-html='button.html'></div>
+			<div class='nav-header-dropdown' ng-if='button.dropdown && button.dropdown.buttons && button.dropdown.buttons.length >0' ng-show='button.dropdown.visible'>
+				<div ng-repeat='dropdownButton in button.dropdown.buttons' class='{{dropdownButton.classes.cont}}'>
+					<a ng-if='dropdownButton.href' class='nav-header-button' ng-href = '{{dropdownButton.href}}' ng-bind-html='dropdownButton.html'></a>
+					<div ng-if='dropdownButton.click' class='nav-header-button' ng-click = 'dropdownButton.click()' ng-bind-html='dropdownButton.html'></div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- 	<div style='max-width:50%; overlap:hidden;'>Automated Inspection Systems, Inc.</div> /> -->
+	<div class='flex1'>&nbsp;</div>
+	<div class='nav-header-right-cont'>
+		<div ng-repeat='button in nav.buttons.right' class='inline-block nav-header-button-cont {{button.classes.cont}}'>
+			<a ng-if='button.href' class='nav-header-button' ng-href = '{{button.href}}' ng-bind-html='button.html'></a>
+			<div ng-if='button.click' class='nav-header-button' ng-click = 'button.click()' ng-bind-html='button.html'></div>
+			<div ng-if='button.dropdown && button.dropdown.buttons && button.dropdown.buttons.length >0' ng-click='button.dropdown.visible =!button.dropdown.visible' class='nav-header-button btn-link' ng-bind-html='button.html'></div>
+			<div class='nav-header-dropdown' ng-if='button.dropdown && button.dropdown.buttons && button.dropdown.buttons.length >0' ng-show='button.dropdown.visible'>
+				<div ng-repeat='dropdownButton in button.dropdown.buttons' class='{{dropdownButton.classes.cont}}'>
+					<a ng-if='dropdownButton.href' class='nav-header-button' ng-href = '{{dropdownButton.href}}' ng-bind-html='dropdownButton.html'></a>
+					<div ng-if='dropdownButton.click' class='nav-header-button' ng-click = 'dropdownButton.click()' ng-bind-html='dropdownButton.html'></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

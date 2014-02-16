@@ -1,0 +1,127 @@
+<div ng-controller='ContactCtrl'>
+		<h3 class='Ais-header'>Contact Information</h3>
+		<br/>
+		<div class='flexbox'>
+			<div class='flex1'>&nbsp;</div>
+			<div class='contact-address'>
+				<h4>Automated Inspection Systems, Inc.</h4>
+				<h4>4861 Sunrise Drive Suite 101</h4>
+				<h4>Martinez, CA 94553</h4>
+				<h4>Phone: (925) 335-9206</h4>
+				<h4>FAX: (925) 335-9208</h4>
+				<h4>Email: <a href="mailto:ais@slip.net?Subject=WebSite%20contact" target="_top">ais@slip.net</a></h4>
+			</div>
+			<div class='Ais-imageF'>
+				<img ng-src='{{appPathImg}}/AISlogo.png'>
+				<img ng-src='{{appPathImg}}/asntlogo1.jpg'>
+			</div>
+			<div class='flex1'>&nbsp;</div>
+		</div>
+		<br/>
+		<div class='flexbox'>
+			<div class='flex1'>&nbsp;</div>
+			<h5>Directions to Automated Inspection Systems, Inc. from local Airports:</h5>
+			<div class='flex1'>&nbsp;</div>
+		</div>
+		<div class='flexbox'>
+			<div class='flex1'>&nbsp;</div>
+			<div class='Ais-imageF'>
+				<a target="_blank" href="					http://maps.yahoo.com/directions/?lat=37.854755499999996&lon=-122.166195&bb=38.03051526491269%2C-122.44182603515625%2C37.678995735087305%2C-121.89056396484375&o=Oakland%20International%20Airport%2C%20Oakland%2C%20CA%2094621&d=4861%20Sunrise%20Dr%2C%20Martinez%2C%20CA%2094553-4387">
+					<img alt="View Map" ng-src='{{appPathImg}}/yahoo-map.jpg'>
+				</a>		
+				<h5 class='contact-sub-header'>Oakland (OAK)</h5>
+			</div>
+			<div class='Ais-imageF'>
+				<a target="_blank" href="				http://maps.yahoo.com/directions/?lat=37.80612&lon=-122.2302095&bb=38.15777674155921%2C-122.7813418515625%2C37.45446325844079%2C-121.6790771484375&o=San%20Francisco%20International%20Airport%2C%20San%20Francisco%2C%20CA%2094128&d=4861%20Sunrise%20Dr%2C%20Martinez%2C%20CA%2094553-4387">
+					<img alt="View Map" ng-src='{{appPathImg}}/yahoo-map.jpg'>
+				</a>		
+				<h5 class='contact-sub-header'>San Francisco (SFO)</h5>
+			</div>
+			<div class='Ais-imageF'>
+				<a target="_blank" href="						http://maps.yahoo.com/directions/?lat=38.341899999999995&lon=-121.862671&bb=39.037319652104784%2C-122.96636983203126%2C37.646480347895206%2C-120.75897216796875&o=Sacramento%20International%20Airport%2C%20Sacramento%2C%20CA%2095837&d=4861%20Sunrise%20Dr%2C%20Martinez%2C%20CA%2094553-4387">					<img alt="View Map" ng-src='{{appPathImg}}/yahoo-map.jpg'>
+				</a>		
+				<h5 class='contact-sub-header'>Sacramento (SMF)</h5>
+			</div>
+			<div class='flex1'>&nbsp;</div>
+		</div>
+		<br/>
+		<div class='contact-form-box' style='display:none'>
+			<form action="MAILTO:ais@slip.net?subject=WebSiteContact" method="post" enctype="text/plain">
+				<div class='contact-form-req'>First Name: (required)<input type="text" name="firstname" value=""></div>
+				<div class='contact-form-req'>Last Name: (required)<input type="text" name="lastname" value=""></div>
+				<div class='contact-form-req'>E-mail: (required)<input type="text" name="mail" value=""></div>
+				<br/>
+				<div class='contact-form-opt'>Phone:<input type="text" name="phone" value=""></div>
+				<div class='contact-form-opt'>Company:<input type="text" name="company" value=""></div>
+				<div class='contact-form-opt'>Country:<input type="text" name="country" value=""></div>
+				<br/>
+				<div class='contact-form-note'>Comments or Questions:<input type="text" name="comment" value=""></div>
+				<br>
+				<div class='flexbox'>
+					<div class='flex1'>&nbsp;</div>
+					<div class='contact-form-send'><input type="submit" value="SEND"></div>
+					<div class='flex1'>&nbsp;</div>
+				</div>
+			</form>		
+		</div>
+		<div class='contact-form-box'>
+		
+			<!--			
+			<form class='jrg-forminput-form' name='contactForm' ng-submit='submitForm()' action="MAILTO:ais@slip.net?subject=WebSiteContact" method="post" enctype="text/plain">
+			-->
+			<form class='jrg-forminput-form' name='contactForm' ng-submit='submitForm()'>
+				<div class='contact-form-req'>
+					<div jrg-forminput placeholder='First Name (required)' ng-model='formVals.first_name' opts='opts' ng-minlength='1' required></div>
+				</div>
+				<div class='contact-form-req'>
+					<div jrg-forminput type='text' placeholder='Last Name (required)' ng-model='formVals.last_name' opts='' ng-minlength='2' required></div>
+				</div>
+				<div class='contact-form-req'>
+					<div jrg-forminput type='email' placeholder='Email (required)' ng-model='formVals.email' opts='' required></div>				
+				</div>
+				<br/>
+				<div class='contact-form-opt'>
+			<!--			
+					<div jrg-forminput type='tel' placeholder='Phone Number' ng-model='formVals.phone' opts='optsPhone' ng-minlength='10' ng-pattern='/^[0-9]+$/'></div>
+			-->
+					<div jrg-forminput type='text' placeholder='Phone Number' ng-model='formVals.phone' opts='' ></div>
+				</div>
+				<div class='contact-form-opt'>
+					<div jrg-forminput type='text' placeholder='Company' ng-model='formVals.company' opts=''></div>
+				</div>
+				<div class='contact-form-opt'>
+					<div jrg-forminput type='text' placeholder='Country' ng-model='formVals.country' opts=''></div>
+				</div>
+				<br/>
+				<div class='contact-form-note'>
+					<div jrg-forminput type='textarea' placeholder='Comments or Questions' ng-model='formVals.comment' opts='' style='height:3em; overlap:wrap;'></div>
+				</div>
+				<br/>
+				<div class='flexbox'>
+					<div class='flex1'>&nbsp;</div>
+					<div ng-if='contactForm.$valid'>
+						<button class='btn btn-primary jrg-forminput-submit' type='submit'>Submit</button>
+					</div>
+					<div ng-if='contactForm.$invalid'>
+						<p class='contact-form-send'>Submit</p>
+					</div>
+				<!--					
+					<h6 ng-show='numSent > 0' class='contact-form-status'>
+						Submitted {{numSent}} Message(s) Sent:{{numGood}} Errors:{{numFail}}
+					</h6>
+				-->					
+					<h6 class='contact-form-status'>{{msgStatus}}</h6>
+					<div class='flex1'>&nbsp;</div>
+				</div>
+			</form>		
+			<br/>
+			<!--			
+				form.$valid: {{contactForm.$valid}}
+				form.$invalid: {{contactForm.$invalid}}
+				<br/>
+				Values:
+				<div ng-repeat='(key, val) in formVals'>{{key}}: {{val}}</div>
+			-->
+		</div>
+		<br/>
+</div>

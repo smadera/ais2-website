@@ -1,0 +1,41 @@
+<div class='productsub-media-query' ng-controller='ManualScannersCtrl'>
+	<div id="manscan0">
+		<br/>
+		<br/>
+		<h3 class='productsub-header'>Manual Scanners</h3>
+		<br/>
+	</div>
+	<div ng-repeat='manscan in manualscanners'>
+		<div class='flexbox'>
+			<div class='flex1'>&nbsp;</div>
+			<h4 class='productsub-header'><a ng-click="gotoAnchor('{{manscan.index}}')">{{manscan.title}}</a></h4>
+			<div class='flex1'>&nbsp;</div>
+		</div>
+	</div> <!-- ng-repeat -->
+	<div style='text-align:center; height:100%;'>
+		<div ng-repeat='manscan in manualscanners'>
+			<div class='productsub-block' id="{{manscan.index}}">			
+				<h5 class='productsub-sub-header'><div ng-bind-html="manscan.title"></div></h5>
+				<div>				
+					<div class='productsub-text'><div ng-bind-html="manscan.text"></div></div>
+					<div class='flexbox'>
+						<div class='flex1'>&nbsp;</div>
+						<div class='productsub-image'>
+							<img ng-src='{{manscan.image}}'>
+						</div>
+						<div class='flex1'>&nbsp;</div>
+						<div class='productsub-list'>
+							<p style='text-align: left;'><strong>Product Features:</strong></p>
+							<ol>
+								<div ng-repeat='item in manscan.features'>
+									<li><div ng-bind-html="item.spec"></div></li>
+								</div> <!-- ng-repeat -->
+							</ol>
+						</div> <!-- productsub-list -->
+					</div> <!-- flexbox -->
+				</div>
+				<h5 class='productsub-sub-header'><a ng-click="gotoAnchor('manscan0')">Go to Top of Page</a></h5>
+			</div> <!-- productsub-block -->
+		</div> <!-- ng-repeat -->
+	</div>
+</div>

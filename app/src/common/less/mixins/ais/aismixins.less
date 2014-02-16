@@ -1,0 +1,212 @@
+/**/
+/* http://designshack.net/articles/css/10-less-css-examples-you-should-steal-for-your-projects/ */
+/**/
+.Ais-border-radius-custom (@topleft: 5px, @topright: 5px, @bottomleft: 5px, @bottomright: 5px) {
+    -webkit-border-radius: @topleft @topright @bottomright @bottomleft;
+    -moz-border-radius: @topleft @topright @bottomright @bottomleft;
+    border-radius: @topleft @topright @bottomright @bottomleft;
+}
+/* ================================================= Implementation 
+	#somediv {
+		.border-radius-custom(20px, 20px, 0px, 0px);
+	} 
+ =================================================== Implementation */
+/**/
+.Ais-box-shadow (@x: 0px, @y: 3px, @blur: 5px, @alpha: 0.5) {
+    -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+    box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+/* ================================================= Implementation 
+	#somediv {
+		.box-shadow(5px, 5px, 6px, 0.3);
+	} 
+ =================================================== Implementation */
+/**/
+.Ais-transition (@prop: all, @time: 1s, @ease: linear) {
+    -webkit-transition: @prop @time @ease 0; /* no delay */
+    -moz-transition: @prop @time @ease 0; /* no delay */
+    -o-transition: @prop @time @ease 0; /* no delay */
+    -ms-transition: @prop @time @ease 0; /* no delay */
+    transition: @prop @time @ease 0; /* no delay */
+}
+/* ================================================= Implementation 
+	#somediv {
+		.transition(all, 0.5s, ease-in);
+	}
+	#somediv:hover {
+		opacity: 0;
+	} 	
+ =================================================== Implementation */
+/**/
+.Ais-gradient (@origin: left, @start: #ffffff, @stop: #000000) {
+    background-color: @start;
+    background-image: -webkit-linear-gradient(@origin, @start, @stop);
+    background-image: -moz-linear-gradient(@origin, @start, @stop);
+    background-image: -o-linear-gradient(@origin, @start, @stop);
+    background-image: -ms-linear-gradient(@origin, @start, @stop);
+    background-image: linear-gradient(@origin, @start, @stop);
+} 
+/* ================================================= Implementation 
+	#somediv {
+		.gradient(left, #663333, #333333);
+	} 
+ =================================================== Implementation */
+/**/
+/* http://designshack.net/articles/css/10-less-css-examples-you-should-steal-for-your-projects/ */
+/**/
+body {
+	@bgcolor: #ccc; /* @grayLight;  set to #999 in colors.less */
+	@bgrange: #222;
+	.Ais-gradient(left, (@bgcolor + @bgrange), (@bgcolor - @bgrange));
+}
+/**/
+/* http://css-tricks.com/perfect-full-page-background-image/ */
+/**/
+/*
+html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+*/
+/* outside black to inside white in 15 steps */
+.Ais-gradient-border(@reverse) when (@reverse = true)
+{
+/* FireFox */
+    -moz-border-bottom-colors: #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+    -moz-border-top-colors:    #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+    -moz-border-left-colors:   #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+    -moz-border-right-colors:  #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+/* Safari and Chrome */
+    -webkit-border-bottom-colors: #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+    -webkit-border-top-colors:    #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+    -webkit-border-left-colors:   #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+    -webkit-border-right-colors:  #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+/* Internet Explorer 10 */
+    -ms-border-bottom-colors: #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+    -ms-border-top-colors:    #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+    -ms-border-left-colors:   #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+    -ms-border-right-colors:  #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+/* others */
+    border-bottom-colors: #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+    border-top-colors:    #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+    border-left-colors:   #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+    border-right-colors:  #111111 #222222 #333333 #444444 #555555 #666666 #777777 #888888 #999999 #aaaaaa #bbbbbb #cccccc #dddddd #eeeeee #ffffff;
+}
+/* outside white to inside black in 15 steps */
+.Ais-gradient-border(@reverse) when (@reverse = false)
+{
+/* FireFox */
+    -moz-border-bottom-colors: #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+    -moz-border-top-colors:    #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+    -moz-border-left-colors:   #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+    -moz-border-right-colors:  #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+/* Safari and Chrome */
+    -webkit-border-bottom-colors: #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+    -webkit-border-top-colors:    #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+    -webkit-border-left-colors:   #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+    -webkit-border-right-colors:  #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+/* Internet Explorer 10 */
+    -ms-border-bottom-colors: #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+    -ms-border-top-colors:    #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+    -ms-border-left-colors:   #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+    -ms-border-right-colors:  #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+/* others */
+    border-bottom-colors: #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+    border-top-colors:    #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+    border-left-colors:   #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+    border-right-colors:  #ffffff #eeeeee #dddddd #cccccc #bbbbbb #aaaaaa #999999 #888888 #777777 #666666 #555555 #444444 #333333 #222222 #111111;
+}
+.Ais-image(@reverse:false)
+{
+	margin: auto;
+	max-width: 100%;
+/*	
+    border: 15px solid #000000;
+	.Ais-gradient-border(@reverse);
+*/
+    border: 4px solid #000000;
+	.Ais-border-radius-custom(2px, 4px, 6px, 8px);
+	.Ais-box-shadow(5px, 5px, 10px, 0.5);
+    padding: 0px 0px 0px 0px;	
+	text-align: center;
+}
+.Ais-media-query()
+{
+	@media (min-width:10px) { // min width of 10 pixels to perform logic
+		.use4big {
+			display: none;
+		}
+		.not4big {
+			display: block;
+			max-width: 100%;
+		}
+		.show-gallerysub-image {
+			display: none;
+		}
+		.gallerysub-header {
+			.Ais-header();
+			text-align:left; 
+			width:90%;
+		}
+		.productsub-header {
+			.Ais-header();
+			text-align:left; 
+			width:90%;
+		}
+	}
+	@media (min-width:500px) { // min width of 500 pixels to perform logic
+		.use4big {
+			display: none;
+		}
+		.not4big {
+			display: block;
+			max-width: 100%;
+		}
+	}
+	@media (min-width:750px) { // min width of 750 pixels to perform logic (overwrites 500px values)
+		.use4big {
+			display: inline-block;
+			font-size: 100%;
+			max-width: 50%; // was 400px; but change to 375 (750 / 2)
+			
+		}
+		.not4big {
+			display: none;
+		}
+		.show-gallerysub-image {
+			display: inline-block;
+		}
+		.gallerysub-header {
+			.Ais-header();
+			text-align:left; 
+			width:50%;
+		}
+		.productsub-header {
+			.Ais-header();
+			text-align:left; 
+			width:50%;
+		}
+	}
+	@media (min-width:1000px) { // min width of 1000 pixels to perform logic (overwrites 750px values)
+		.tryit h4 {
+/*		
+//			color:@red;
+//			float: right;
+//			min-height: 16%; // 100 / 6 = 16.67 
+*/		
+			min-height: 10%; // 100 / 10 = 10 
+		}
+		.use4big {
+			display: inline-block;
+			font-size: 100%;
+			max-width: 50%; // was 400px; but change to 500 (1000 / 2)
+		}
+		.not4big {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,103 @@
+<div class='Ais-query' ng-controller='CorrosionCtrl'>
+<h3 class='Ais-header'>Corrosion Mapping - Large Area Cscans</h3>
+<div>
+	<div class='flexbox'>
+		<div class='flex1'>&nbsp;</div>
+		<div class='Ais-imageF'>
+			<img ng-src='{{appPathImg}}/preview-corrosion.jpg'>
+			<div><strong>Corrosion Mapping</strong></div>
+		</div>
+		<div class='flex1'>&nbsp;</div>
+		<div class='use4big'>
+			<div ng-repeat='item in corrosionSplash'>
+				<h4 class='Ais-header' ng-bind-html="item.feature"></h4>
+			</div> <!-- ng-repeat -->
+		</div> <!-- use4big -->
+		<div class='flex1'>&nbsp;</div>
+	</div> <!-- flexbox -->
+	<div class='not4big'>
+		<div ng-repeat='item in corrosionSplash'>
+			<h4 class='Ais-header' ng-bind-html="item.feature"></h4>
+		</div> <!-- ng-repeat -->
+	</div> <!-- not4big -->
+</div>
+<br/> <!-- ********************************************************************************************** -->
+<p>
+	<br/>
+	<br/> <!-- ********************************************************************************************** -->
+	<div class='app-aispage-container app-aispage-container-left'>
+		<div app-aispage aispagevalues="corrosionLargearea[0]"></div>
+	</div>
+	<div class='app-aispage-container app-aispage-container-right''>
+		<div app-aispage aispagevalues="corrosionRoboscanner[0]"></div>
+	</div>
+	<br/> <!-- ********************************************************************************************** -->
+	<div class='app-aispage-container app-aispage-container-left'>
+		<div app-aispage aispagevalues="corrosionConfigurations[0]"></div>
+	</div>
+	<div class='app-aispage-container app-aispage-container-right''>
+		<div app-aispage aispagevalues="corrosionLongarm[0]"></div>
+	</div>
+	<br/> <!-- ********************************************************************************************** -->
+	<div class='app-aispage-container app-aispage-container-left'>
+		<div app-aispage aispagevalues="corrosionRobopipe[0]"></div>
+	</div>
+	<div class='app-aispage-container app-aispage-container-right''>
+		<div app-aispage aispagevalues="corrosionDatasystem[0]"></div>
+	</div>
+	<br/> <!-- ********************************************************************************************** -->
+	<div class='app-aispage-container app-aispage-container-left'>
+		<div app-aispage aispagevalues="corrosionDucer[0]"></div>
+	</div>
+	<div class='app-aispage-container app-aispage-container-right''>
+		<div app-aispage aispagevalues="corrosionBubbler[0]"></div>
+	</div>
+	<br/> <!-- ********************************************************************************************** -->
+	<div class='app-aispage-container app-aispage-container-left'>
+		<div app-aispage aispagevalues="corrosionDataanal[0]"></div>
+	</div>
+	<div class='app-aispage-container app-aispage-container-right''>
+		<div app-aispage aispagevalues="corrosionFeature[0]"></div>
+	</div>
+	<br/> <!-- ********************************************************************************************** -->
+	<div class='app-aispage-container app-aispage-container-left'>
+		<div app-aispage aispagevalues="corrosionDeworm[0]"></div>
+	</div>
+	<div class='app-aispage-container app-aispage-container-right''>
+		<div app-aispage aispagevalues="corrosionReport[0]"></div>
+	</div>
+	<br/> <!-- ********************************************************************************************** -->
+	<div class='app-aispage-container app-aispage-container-left'>
+		<div app-aispage aispagevalues="corrosionFscscan[0]"></div>
+	</div>
+	<div class='app-aispage-container app-aispage-container-right''>
+		<div app-aispage aispagevalues="corrosionPipewall[0]"></div>
+	</div>
+	<br/> <!-- ********************************************************************************************** -->
+	<div class='app-aispage-container app-aispage-container-left'>
+		<div app-aispage aispagevalues="corrosionVessel[0]"></div>
+	</div>
+	<div class='app-aispage-container app-aispage-container-right''>
+		<div app-aispage aispagevalues="corrosionVesselhead[0]"></div>
+	</div>
+	<br/> <!-- ********************************************************************************************** -->
+	<br/> <!-- ********************************************************************************************** -->
+	<h5 class='Ais-header'>Summary</h5>
+	<p>
+	<abbr title="Automated Inspection Systems, Inc.">AIS</abbr> provides a complete turnkey Corrosion Mapping Inspection System consisting of Data Acquisition Hardware, Scanner, Scan Controller, Advanced Data Analysis Software, Couplant Tank, Transducers, Bubblers and Wedges. Advantages of the <abbr title="Automated Inspection Systems, Inc.">AIS</abbr> Corrosion Mapping Inspection System are many fold:
+	<div class='Ais-list'>
+		<ol>
+			<li>One company provides the entire system</li>
+			<li>Turn key integrated data system with scanner</li>
+			<li>High Resolution, Band Pass Filtering, Wave Form Averaging</li>
+			<li>Inspect Pipes, Vessels and Tanks</li>
+			<li>Motorized RoboScanner</li>
+			<li>Modular frame for all configurations</li>
+			<li>Report generating analysis software</li>
+			<li><abbr title="Automated Inspection Systems, Inc.">AIS</abbr> provides support and / or an upgrade path for the life of its products</li>
+		</ol>
+	</div> <!-- corrosion-list -->
+	</p>
+	<br/> <!-- ********************************************************************************************** -->
+</p>
+</div>

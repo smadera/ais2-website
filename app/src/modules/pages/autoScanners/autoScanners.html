@@ -1,0 +1,41 @@
+<div class='productsub-media-query' ng-controller='AutoScannersCtrl'>
+	<div id="autoscan0">
+		<br/>
+		<br/>
+		<h3 class='productsub-header'>Automatic Scanners</h3>
+		<br/>
+	</div>
+	<div ng-repeat='autoscan in autoscanners'>
+		<div class='flexbox'>
+			<div class='flex1'>&nbsp;</div>
+			<h4 class='productsub-header'><a ng-click="gotoAnchor('{{autoscan.index}}')">{{autoscan.title}}</a></h4>
+			<div class='flex1'>&nbsp;</div>
+		</div>
+	</div> <!-- ng-repeat -->
+	<div style='text-align:center; height:100%;'>
+		<div ng-repeat='autoscan in autoscanners'>
+			<div class='productsub-block' id="{{autoscan.index}}">			
+				<h5 class='productsub-sub-header'><a ng-click="gotoAutoScanners('{{autoscan.index}}')"><div ng-bind-html="autoscan.title"></div></a></h5>
+				<div>				
+					<div class='productsub-text'><div ng-bind-html="autoscan.text"></div></div>
+					<div class='flexbox'>
+						<div class='flex1'>&nbsp;</div>
+						<div class='productsub-image'>
+							<img ng-src='{{autoscan.image}}'>
+						</div>
+						<div class='flex1'>&nbsp;</div>
+						<div class='productsub-list'>
+							<p style='text-align: left;'><strong>Product Features:</strong></p>
+							<ol>
+								<div ng-repeat='item in autoscan.features'>
+									<li><div ng-bind-html="item.spec"></div></li>
+								</div> <!-- ng-repeat -->
+							</ol>
+						</div> <!-- productsub-list -->
+					</div> <!-- flexbox -->
+				</div>
+				<h5 class='productsub-sub-header'><a ng-click="gotoAnchor('autoscan0')">Go to Top of Page</a></h5>
+			</div> <!-- productsub-block -->
+		</div> <!-- ng-repeat -->
+	</div>
+</div>

@@ -1,0 +1,68 @@
+<div ng-controller='PreviewCtrl'>
+	<div class='flexbox'>
+		<div class='use-nav-menu'>
+			<h3 class='nav-menu-header'>Applications</h3>
+			<div>
+				<h5 class='nav-menu-option'><a ng-click='gotoDetails(0)'>Corrosion Mapping</a></h5>
+				<h5 class='nav-menu-option'><a ng-click='gotoDetails(1)'>Heavywall Girth Welds</a></h5>
+				<h5 class='nav-menu-option'><a ng-click='gotoDetails(2)'>Turbine Rotorbores</a></h5>
+				<h5 class='nav-menu-option'><a ng-click='gotoDetails(3)'>Wind Turbine Blades</a></h5>
+			</div> <!-- nav-menu-home -->
+			<h3 class='nav-menu-header'>Products</h3>
+			<div>
+				<h5 class='nav-menu-option'><a ng-click='gotoProducts(1)'>Systems</a></h5>
+				<h5 class='nav-menu-option'><a ng-click='gotoProducts(2)'>Automatic Scanners</a></h5>
+				<h5 class='nav-menu-option'><a ng-click='gotoProducts(3)'>Manual Scanners</a></h5>
+			</div> <!-- nav-menu-products -->
+			<h3 class='nav-menu-header'>Gallery</h3>
+			<div>
+				<h5 class='nav-menu-option'><a ng-click='gotoOthers(1)'>Photos</a></h5>
+				<h5 class='nav-menu-option'><a ng-click='gotoOthers(2)'>Videos</a></h5>
+			</div> <!-- nav-menu-gallery -->
+			<h3 class='nav-menu-header'>Information</h3>
+			<div>
+		<!-- 
+				<h5 class='nav-menu-option'><a ng-click='gotoOthers(-1)'>Home</a></h5>
+		  -->				
+				<h5 class='nav-menu-option'><a ng-click='gotoOthers(-2)'>About</a></h5>
+				<h5 class='nav-menu-option'><a ng-click='gotoOthers(-3)'>Contact</a></h5>
+			</div> <!-- nav-menu-information -->
+		</div> <!-- use-nav-menu -->
+		<div>
+			<div class='flexbox'>
+				<div class='flex1'>&nbsp;</div>
+				<div>
+					<div class='slide-icon fa fa-play' ng-class="{'active': icons[0].active}" ng-click='iconSlide(123)'></div>
+					<div class='slide-icon fa fa-stop' ng-class="{'active': icons[1].active}" ng-click='iconSlide(0)'></div>
+					<div class='slide-icon fa fa-step-backward' ng-class="{'active': icons[2].active}"  ng-click='iconSlide(-1)'></div>
+					<div class='slide-icon fa fa-step-forward' ng-class="{'active': icons[3].active}" ng-click='iconSlide(1)'></div>
+					<div ng-repeat='slide in slides' class='slide-knt' ng-class="{'selected': slide.selected}" ng-click='gotoDetails($index)'>
+					</div> <!-- ng-repeat -->
+				</div>
+				<div class='flex1'>&nbsp;</div>
+			</div> <!-- all-slides -->
+
+			<div>
+ 				<!-- vertical center with flexbox -->
+				<div class='flexbox'>
+					<div class='flex1'>&nbsp;</div>
+					<div class='Ais-imageF'>
+						<img ng-src='{{slides[optsCarousel.curSlide].image}}' ng-click='gotoDetails(optsCarousel.curSlide)'>
+						<div><strong>{{slides[optsCarousel.curSlide].text}}</strong></div>
+					</div>
+					<div class='flex1'>&nbsp;</div>
+				</div> <!-- flexbox -->
+			</div> <!-- slide-image -->
+		
+			<div class='flexbox bottom-tiles-block'>
+				<div ng-repeat='tile in tiles' style='display:inline-block;'>
+					<div class='bottom-tiles' ng-class="{'selected': tile.selected}" ng-click='gotoTiles($index)'>
+						<img class='bottom-tiles-image' ng-src='{{tile.image}}'>
+						<p class='bottom-tiles-text'>{{tile.text}}</p>
+					</div> <!-- bottom-tiles -->
+				</div> <!-- ng-repeat -->
+			</div> <!-- bottom-tiles-block -->
+		</div>
+	</div> <!-- flexbox -->
+	
+</div> <!-- preview -->

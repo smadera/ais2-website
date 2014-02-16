@@ -1,0 +1,35 @@
+<div ng-controller='VideosCtrl'>
+	<div id="video0">
+		<br/>
+		<br/>
+		<h3 class='gallerysub-header'>Video Gallery</h3>
+		<br/>
+	</div>
+	<div ng-repeat='video in videos'>
+		<div class='flexbox'>
+			<div class='flex1'>&nbsp;</div>
+			<h4 class='gallerysub-header'><a ng-click="gotoAnchor('{{video.index}}')">{{video.title}}</a></h4>
+			<div class='flex1'>&nbsp;</div>
+		</div>
+	</div> <!-- ng-repeat -->
+	<div style='text-align:center; height:100%;'>
+		<div ng-repeat='video in videos'>
+			<div class='gallerysub-block' id="{{video.index}}">			
+				<h5 class='gallerysub-sub-header'>{{video.title}}</h5>
+				<div>				
+					<div class='flexbox'>
+						<div class='flex1'>&nbsp;</div>
+						<div class='gallerysub-image' style='display:inline-block;'>
+							<iframe ng-src='{{video.picture}}'>
+								<p>Your browser does not support iframes.</p>
+							</iframe>	
+							<img class='show-gallerysub-image' ng-src='{{video.image}}'>
+						</div>
+						<div class='flex1'>&nbsp;</div>
+					</div>
+					<h5 class='videos-gallerysub-header'><a ng-click="gotoAnchor('video0')">Go to Top of Page</a></h5>
+				</div>
+			</div>
+		</div> <!-- ng-repeat -->
+	</div>
+</div>

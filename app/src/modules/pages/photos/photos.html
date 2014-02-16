@@ -1,0 +1,35 @@
+<div ng-controller='PhotosCtrl'>
+	<div id="photo0">
+		<br/>
+		<br/>
+		<h3 class='gallerysub-header'>Photo Gallery</h3>
+		<br/>
+	</div>
+	<div ng-repeat='photo in photos'>
+		<div class='flexbox'>
+			<div class='flex1'>&nbsp;</div>
+			<h4 class='gallerysub-header'><a ng-click="gotoAnchor('{{photo.index}}')">{{photo.title}}</a></h4>
+			<div class='flex1'>&nbsp;</div>
+		</div>
+	</div> <!-- ng-repeat -->
+	<div style='text-align:center; height:100%;'>
+		<div ng-repeat='photo in photos'>
+			<div class='gallerysub-block' id="{{photo.index}}">			
+				<h5 class='gallerysub-sub-header'>{{photo.title}}</h5>
+				<div>				
+					<div class='flexbox'>
+						<div class='flex1'>&nbsp;</div>
+						<div class='gallerysub-image'>
+							<div ng-repeat='pic in photo.pictures' style='display:inline-block;'>
+							<!-- <img ng-src='{{appPathImg}}/{{pic.image}}.jpg'> -->
+								<img ng-src='{{pic.image}}'>
+							</div> <!-- ng-repeat -->
+						</div>
+						<div class='flex1'>&nbsp;</div>
+					</div>
+					<h5 class='gallerysub-sub-header'><a ng-click="gotoAnchor('photo0')">Go to Top of Page</a></h5>
+				</div>
+			</div>
+		</div> <!-- ng-repeat -->
+	</div>
+</div>
