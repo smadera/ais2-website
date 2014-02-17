@@ -125,7 +125,7 @@ var inst ={
 						html: "Preview",
 						html:"<div><div class='header-icon icon-ellipsis-horizontal'></div><div class='header-text'>Preview</div></div>",
 						*/
-						html:"<div><div class='header-icon icon-home'></div><div class='header-text'>Preview</div></div>",
+						html:"<div><div class='header-icon fa fa-home'></div><div class='header-text'>Preview</div></div>",
 						href: this.paths.appPathLink+'preview'
 					},
 					{
@@ -133,7 +133,7 @@ var inst ={
 						html: "Products",
 						href: this.paths.appPathLink+'products'
 						*/
-						html:"<div><div class='header-icon icon-suitcase'></div><div class='header-text'>Products</div></div>",
+						html:"<div><div class='header-icon fa fa-suitcase'></div><div class='header-text'>Products</div></div>",
 						dropdown: { // must remove href from above when dropdown is added
 							visible: false,
 							buttons:[
@@ -157,7 +157,7 @@ var inst ={
 						html: "Gallery",
 						href: this.paths.appPathLink+'gallery'
 						*/
-						html:"<div><div class='header-icon icon-picture'></div><div class='header-text'>Gallery</div></div>",
+						html:"<div><div class='header-icon fa fa-picture-o'></div><div class='header-text'>Gallery</div></div>",
 						dropdown: { // must remove href from above when dropdown is added
 							visible: false,
 							buttons:[
@@ -186,7 +186,7 @@ var inst ={
 					/*
 					html: "About",
 					*/
-					html:"<div><div class='footer-icon icon-info-sign'></div><div class='footer-text'>About</div></div>",
+					html:"<div><div class='footer-icon fa fa-info-circle'></div><div class='footer-text'>About</div></div>",
 					href: this.paths.appPathLink+'about'
 				},
 				{
@@ -194,7 +194,7 @@ var inst ={
 					html: "Contact Us",
 					href: 'mailto:ais@slip.net?Subject=WEBsite%20Contact'
 					*/
-					html:"<div><div class='footer-icon icon-user'></div><div class='footer-text'>Contact</div></div>",
+					html:"<div><div class='footer-icon fa fa-user'></div><div class='footer-text'>Contact</div></div>",
 					href: this.paths.appPathLink+'contact' 
 				}
 			]
