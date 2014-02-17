@@ -95,7 +95,7 @@ var inst ={
 	initPaths: function(params) {
 		this.pathRoot =appConfig.dirPaths.staticPath+this.pathRoot;		//prepend static path to account for different environments / configs and ensure this always references the correct path
 		this.paths.templates = {
-			headerCentered: this.pathRoot+'header-centered/header-centered.html',
+			headerDropdown: this.pathRoot+'header-dropdown/header-dropdown.html',
 			footerFlex: this.pathRoot+'footer-flex/footer-flex.html'
 		};
 		this.paths.appPathLink =appConfig.dirPaths.appPathLink;
@@ -114,27 +114,63 @@ var inst ={
 			click: function() {self.historyBack({}); }
 		};
 		
-		this.components.headerCentered ={
-			template: this.paths.templates.headerCentered,
-			title: {
-				html: '[Title]'
-			},
+		this.components.headerDropdown ={
+			template: self.paths.templates.headerDropdown,
 			buttons: {
 				left: [
-					this.components.backButton,
-					{
-						html: "Test",
-						href: this.paths.appPathLink+'dev-test/test'
-					}
 				],
 				right: [
 					{
-						html: "<span class='fa fa-sign-in'></span>",
-						href: this.paths.appPathLink+'login'
+						/*
+						html: "Preview",
+						html:"<div><div class='header-icon icon-ellipsis-horizontal'></div><div class='header-text'>Preview</div></div>",
+						*/
+						html:"<div><div class='header-icon icon-home'></div><div class='header-text'>Preview</div></div>",
+						href: this.paths.appPathLink+'preview'
 					},
 					{
-						html: "<span class='fa fa-sign-out'></span>",
-						href: this.paths.appPathLink+'logout'
+						/*
+						html: "Products",
+						href: this.paths.appPathLink+'products'
+						*/
+						html:"<div><div class='header-icon icon-suitcase'></div><div class='header-text'>Products</div></div>",
+						dropdown: { // must remove href from above when dropdown is added
+							visible: false,
+							buttons:[
+								{
+									html:"<div><div class='dropdown-text'>Systems</div></div>",
+									href: this.paths.appPathLink+'systems'
+								},
+								{
+									html:"<div><div class='dropdown-text'>AutoScanners</div></div>",
+									href: this.paths.appPathLink+'autoScanners'
+								},
+								{
+									html:"<div><div class='dropdown-text'>ManualScanners</div></div>",
+									href: this.paths.appPathLink+'manualScanners'
+								}
+							]
+						}
+					},
+					{
+						/*
+						html: "Gallery",
+						href: this.paths.appPathLink+'gallery'
+						*/
+						html:"<div><div class='header-icon icon-picture'></div><div class='header-text'>Gallery</div></div>",
+						dropdown: { // must remove href from above when dropdown is added
+							visible: false,
+							buttons:[
+								{
+									html:"<div><div class='dropdown-text'>Photos</div></div>",
+									href: this.paths.appPathLink+'photos'
+								},
+								{
+									html:"<div><div class='dropdown-text'>Videos</div></div>",
+									href: this.paths.appPathLink+'videos'
+								}
+							]
+						}
 					}
 				]
 			}
@@ -147,18 +183,19 @@ var inst ={
 			},
 			buttons: [
 				{
-					// html: "<span class='fa fa-unlock'></span>",
-					// href: this.paths.appPathLink+'password-reset'
-					html: "SocketIO",
-					href: this.paths.appPathLink+'dev-test/socketio'
+					/*
+					html: "About",
+					*/
+					html:"<div><div class='footer-icon icon-info-sign'></div><div class='footer-text'>About</div></div>",
+					href: this.paths.appPathLink+'about'
 				},
 				{
-					html: "Design",
-					href: this.paths.appPathLink+'dev-test/design'
-				},
-				{
-					html: "Test",
-					href: this.paths.appPathLink+'dev-test/test'
+					/* used if not using seperate contact page 
+					html: "Contact Us",
+					href: 'mailto:ais@slip.net?Subject=WEBsite%20Contact'
+					*/
+					html:"<div><div class='footer-icon icon-user'></div><div class='footer-text'>Contact</div></div>",
+					href: this.paths.appPathLink+'contact' 
 				}
 			]
 		};
@@ -167,7 +204,7 @@ var inst ={
 		};
 		
 		this.components.defaultNav ={
-			header: this.components.headerCentered,
+			header: this.components.headerDropdown,
 			footer: this.components.footerMain
 		};
 	},
