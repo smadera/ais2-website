@@ -3,22 +3,31 @@ This file pairs with the nav.js file/service. This is the custom stuff - the lis
 
 Sets up the header and footer navigation buttons / displays.
 Each button generally has the following properties (but check the corresponding HTML template for a full reference)
-	- `html` of the content to display, i.e. "Title Here" or "<span class='fa fa-bell'></span>" or "&nbsp;"
+	- either `html` or 'icon' and 'iconHtml' of the content to display, i.e. "Title Here" or "<span class='fa fa-bell'></span>" or "&nbsp;"
 	- either an `href` or `click`. For the `click`, it's generally a $rootScope.$broadcast that can be listened for in the appropriate controller for that page.
 	- `classes` which is an object that has style classes to apply for different parts of the nav item (i.e. `cont` is usually the class for the outer-most container)
 		- use classes.cont ='hidden' as a special class to HIDE (display:none) the entire header and/or footer
 	
 @example
 buttons: [
+	//icon and text/html
 	{
-		html: "<span class='fa fa-bell'></span>",
+		icon: 'fa fa-bolt',
+		iconHtml: 'Test',
+		href: this.paths.appPathLink+'dev-test/test'
+	},
+	//html/text only
+	{
+		html: "Notifications",
 		href: this.paths.appPathLink+'notifications',
 		id: 'notifications'
 	},
+	//icon only
 	{
-		html: "<span class='icon-calendar-17-dark'></span>",
+		icon: 'fa fa-arrow-left',
 		click: function() { $rootScope.$broadcast('NavEventChangePage', {page:'event1'}); },
 	},
+	//NOTE: this works, but should just use icon instead of stuffing in html
 	{
 		html: "<span class='icon-tribe'></span>",
 		href: this.paths.appPathLink+'tribes'
@@ -110,7 +119,8 @@ var inst ={
 		
 		//NOTE: this references a function in THIS file/service, which is NOT what we want, we want to reference appNav SO we need to overwrite/set the historyBack function here from appNav later so this will work!
 		this.components.backButton ={
-			html: "<span class='fa fa-arrow-left'></span>",
+			icon: 'fa fa-arrow-left',
+			// html: "<span class='fa fa-arrow-left'></span>",
 			click: function() {self.historyBack({}); }
 		};
 		
@@ -121,19 +131,13 @@ var inst ={
 				],
 				right: [
 					{
-						/*
-						html: "Preview",
-						html:"<div><div class='header-icon icon-ellipsis-horizontal'></div><div class='header-text'>Preview</div></div>",
-						*/
-						html:"<div><div class='header-icon fa fa-home'></div><div class='header-text'>Preview</div></div>",
-						href: this.paths.appPathLink+'preview'
+						icon: 'fa fa-home',
+						iconHtml: 'Preview',
+						href: this.paths.appPathLink+'preview'					
 					},
 					{
-						/*
-						html: "Products",
-						href: this.paths.appPathLink+'products'
-						*/
-						html:"<div><div class='header-icon fa fa-suitcase'></div><div class='header-text'>Products</div></div>",
+						icon: 'fa fa-suitcase',
+						iconHtml: 'Products',
 						dropdown: { // must remove href from above when dropdown is added
 							visible: false,
 							buttons:[
@@ -153,11 +157,8 @@ var inst ={
 						}
 					},
 					{
-						/*
-						html: "Gallery",
-						href: this.paths.appPathLink+'gallery'
-						*/
-						html:"<div><div class='header-icon fa fa-picture-o'></div><div class='header-text'>Gallery</div></div>",
+						icon: 'fa fa-picture-o',
+						iconHtml: 'Gallery',
 						dropdown: { // must remove href from above when dropdown is added
 							visible: false,
 							buttons:[
@@ -183,10 +184,8 @@ var inst ={
 			},
 			buttons: [
 				{
-					/*
-					html: "About",
-					*/
-					html:"<div><div class='footer-icon fa fa-info-circle'></div><div class='footer-text'>About</div></div>",
+					icon: 'fa fa-info-circle',
+					iconHtml: 'About',
 					href: this.paths.appPathLink+'about'
 				},
 				{
@@ -194,7 +193,8 @@ var inst ={
 					html: "Contact Us",
 					href: 'mailto:ais@slip.net?Subject=WEBsite%20Contact'
 					*/
-					html:"<div><div class='footer-icon fa fa-user'></div><div class='footer-text'>Contact</div></div>",
+					icon: 'fa fa-user',
+					iconHtml: 'Contact',
 					href: this.paths.appPathLink+'contact' 
 				}
 			]

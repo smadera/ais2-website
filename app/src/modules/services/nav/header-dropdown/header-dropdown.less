@@ -1,18 +1,73 @@
 .nav-header {
 	background-color:@gray;
 	color:white;
-	border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
-.nav-header-left-cont, .nav-header-right-cont {
+.nav-header.hidden, .nav-header-button-cont.hidden {
+	display:none;
+}
+.nav-header-button, .nav-header-icon-button {
 	text-align:center;
 	cursor:pointer;
+	display:block;		//so <a> tags take full width and are centered (make them act like <div> tags)
+	color:white;		//needed to overwrite <a> styles
+	line-height:45px;
 }
-.selected .nav-header-button {
-	background-color:white;
-	color:@gray;
+.nav-header-button {
+	font-size:1.35em;
+}
+.nav-header-icon-button {
+	padding-top:7px;
+	line-height:1em;
+	font-size:1em;
+}
+.nav-header-icon-button-icon {
+	font-size:16pt;
+	//line-height:20px;
+}
+.nav-header-icon-button-text {
+	font-size:9pt;
+	line-height:11pt;
+}
+.nav-header-button.icon-only {
+}
+.nav-header-button.icon-only .nav-header-icon-button-icon {
+	font-size:21pt;
 }
 .nav-header-button-cont {
 	position:relative;
+}
+//must do the PARENT as background so the step arrows can be z-index'ed ON TOP of the background
+.nav-header-button-cont.selected {
+	background-color:@grayDark;
+}
+.nav-header-button {
+	/*opacity:0.8;*/		//this makes the overlapping step arrows very hard to match colors
+	z-index:1;		//necessary to allow step arrows to show up ON TOP of this
+	position:relative;		//necessary for z-index to work
+}
+.selected .nav-header-button {
+	/*opacity:1;*/
+}
+//steps (show arrow on left)
+.nav-header.steps >div a::before {
+	.triangle-right(12px; 23px; @grayDark);
+	top:0;
+	right:-15px;
+	z-index:99;		//so step arrows show up on TOP of background color
+}
+.nav-header.steps >div a::after {
+	.triangle-right(12px; 23px; @gray);
+	top:0;
+	right:-14px;
+	z-index:99;		//so step arrows show up on TOP of background color
+}
+//no arrow on last one
+.nav-header.steps >div:last-child a::before, .nav-header.steps >div:last-child a::after {
+	border:none;
+}
+//selected
+.nav-header.steps .nav-header-button-cont.selected a::after {
+	border:none;
 }
 .nav-header-dropdown {
 	position:absolute;
@@ -20,20 +75,6 @@
 	border-left:solid 1px black;
 	border-right:solid 1px black;
 	border-bottom:solid 1px black;
-}
-.nav-header-button {
-//	line-height:45px;
-//	min-width:40px;
-	min-width:50px;
-	background-color:@gray;
-	color:white;
-	padding-left:5px;
-	padding-right:5px;
-	text-align:center;
-}
-.nav-header-button {
-	display:block;		//so <a> tags take full width and are centered (make them act like <div> tags)
-	color:white;		//needed to overwrite <a> styles
 }
 //don't show logo on mobile / when don't have enough width to show both logo and buttons
 .nav-header-logo {
