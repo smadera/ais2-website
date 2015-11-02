@@ -9,7 +9,7 @@
 	"forever": 0,
 	"app": {
 		"name": "ais2",
-		"title": "AIS"
+        "title": "Automated Inspection Systems, Inc."
 	},
 	"platform":"",
 	"server": {
@@ -73,14 +73,28 @@
 	"less":{
 		"dirPathRootPrefix": ""
 	},
+	"email4nodemailer":{
+		"from": "WebSite <madera.stevenm@gmail.com>",
+		"transport":{
+			"smtp":{
+				"service": "Gmail",
+				"auth": {
+					"user": "madera.stevenm@gmail.com",
+					"pass": "msm4gmail.com"
+				}	
+			}
+		}
+	},	
 	"email":{
-		"domain": "localhost",
+		"domain": "162.243.141.31",
 		"addresses": {
+			"to": "ais@slip.net",
 			"noReply": "noreply"
 		},
-		"from": "admin@ais2.com",
-		"from_name": "Admin",
-		"mandrillApiKey": "8X-1bNRWtA4rbneppkqahw",
+		"subject": "WebSite Contact",
+		"from": "madera.stevenm@gmail.com",
+		"from_name": "Website",
+		"mandrillApiKey": "QHlBko7zZDW6lu8F7owkBw",
 		"mandrillApiKeyComment":"Make sure to CHANGE this!"
 	},
 	"sms":{
@@ -105,5 +119,5 @@
 	"sauceLabs":{
 		"user": "",
 		"key": ""
-	}
+	}	
 }

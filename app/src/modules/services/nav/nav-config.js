@@ -3,22 +3,31 @@ This file pairs with the nav.js file/service. This is the custom stuff - the lis
 
 Sets up the header and footer navigation buttons / displays.
 Each button generally has the following properties (but check the corresponding HTML template for a full reference)
-	- `html` of the content to display, i.e. "Title Here" or "<span class='fa fa-bell'></span>" or "&nbsp;"
+	- either `html` or 'icon' and 'iconHtml' of the content to display, i.e. "Title Here" or "<span class='fa fa-bell'></span>" or "&nbsp;"
 	- either an `href` or `click`. For the `click`, it's generally a $rootScope.$broadcast that can be listened for in the appropriate controller for that page.
 	- `classes` which is an object that has style classes to apply for different parts of the nav item (i.e. `cont` is usually the class for the outer-most container)
 		- use classes.cont ='hidden' as a special class to HIDE (display:none) the entire header and/or footer
 	
 @example
 buttons: [
+	//icon and text/html
 	{
-		html: "<span class='fa fa-bell'></span>",
+		icon: 'fa fa-bolt',
+		iconHtml: 'Test',
+		href: this.paths.appPathLink+'dev-test/test'
+	},
+	//html/text only
+	{
+		html: "Notifications",
 		href: this.paths.appPathLink+'notifications',
 		id: 'notifications'
 	},
+	//icon only
 	{
-		html: "<span class='icon-calendar-17-dark'></span>",
+		icon: 'fa fa-arrow-left',
 		click: function() { $rootScope.$broadcast('NavEventChangePage', {page:'event1'}); },
 	},
+	//NOTE: this works, but should just use icon instead of stuffing in html
 	{
 		html: "<span class='icon-tribe'></span>",
 		href: this.paths.appPathLink+'tribes'
@@ -95,7 +104,7 @@ var inst ={
 	initPaths: function(params) {
 		this.pathRoot =appConfig.dirPaths.staticPath+this.pathRoot;		//prepend static path to account for different environments / configs and ensure this always references the correct path
 		this.paths.templates = {
-			headerCentered: this.pathRoot+'header-centered/header-centered.html',
+			headerDropdown: this.pathRoot+'header-dropdown/header-dropdown.html',
 			footerFlex: this.pathRoot+'footer-flex/footer-flex.html'
 		};
 		this.paths.appPathLink =appConfig.dirPaths.appPathLink;
@@ -110,31 +119,59 @@ var inst ={
 		
 		//NOTE: this references a function in THIS file/service, which is NOT what we want, we want to reference appNav SO we need to overwrite/set the historyBack function here from appNav later so this will work!
 		this.components.backButton ={
-			html: "<span class='fa fa-arrow-left'></span>",
+			icon: 'fa fa-arrow-left',
+			// html: "<span class='fa fa-arrow-left'></span>",
 			click: function() {self.historyBack({}); }
 		};
 		
-		this.components.headerCentered ={
-			template: this.paths.templates.headerCentered,
-			title: {
-				html: '[Title]'
-			},
+		this.components.headerDropdown ={
+			template: self.paths.templates.headerDropdown,
 			buttons: {
 				left: [
-					this.components.backButton,
-					{
-						html: "Test",
-						href: this.paths.appPathLink+'dev-test/test'
-					}
 				],
 				right: [
 					{
-						html: "<span class='fa fa-sign-in'></span>",
-						href: this.paths.appPathLink+'login'
+						icon: 'fa fa-home',
+						iconHtml: 'Preview',
+						href: this.paths.appPathLink+'preview'					
 					},
 					{
-						html: "<span class='fa fa-sign-out'></span>",
-						href: this.paths.appPathLink+'logout'
+						icon: 'fa fa-suitcase',
+						iconHtml: 'Products',
+						dropdown: { // must remove href from above when dropdown is added
+							visible: false,
+							buttons:[
+								{
+									html:"<div><div class='dropdown-text'>Systems</div></div>",
+									href: this.paths.appPathLink+'systems'
+								},
+								{
+									html:"<div><div class='dropdown-text'>AutoScanners</div></div>",
+									href: this.paths.appPathLink+'autoScanners'
+								},
+								{
+									html:"<div><div class='dropdown-text'>ManualScanners</div></div>",
+									href: this.paths.appPathLink+'manualScanners'
+								}
+							]
+						}
+					},
+					{
+						icon: 'fa fa-picture-o',
+						iconHtml: 'Gallery',
+						dropdown: { // must remove href from above when dropdown is added
+							visible: false,
+							buttons:[
+								{
+									html:"<div><div class='dropdown-text'>Photos</div></div>",
+									href: this.paths.appPathLink+'photos'
+								},
+								{
+									html:"<div><div class='dropdown-text'>Videos</div></div>",
+									href: this.paths.appPathLink+'videos'
+								}
+							]
+						}
 					}
 				]
 			}
@@ -147,18 +184,18 @@ var inst ={
 			},
 			buttons: [
 				{
-					// html: "<span class='fa fa-unlock'></span>",
-					// href: this.paths.appPathLink+'password-reset'
-					html: "SocketIO",
-					href: this.paths.appPathLink+'dev-test/socketio'
+					icon: 'fa fa-info-circle',
+					iconHtml: 'About',
+					href: this.paths.appPathLink+'about'
 				},
 				{
-					html: "Design",
-					href: this.paths.appPathLink+'dev-test/design'
-				},
-				{
-					html: "Test",
-					href: this.paths.appPathLink+'dev-test/test'
+					/* used if not using seperate contact page 
+					html: "Contact Us",
+					href: 'mailto:ais@slip.net?Subject=WEBsite%20Contact'
+					*/
+					icon: 'fa fa-user',
+					iconHtml: 'Contact',
+					href: this.paths.appPathLink+'contact' 
 				}
 			]
 		};
@@ -167,7 +204,7 @@ var inst ={
 		};
 		
 		this.components.defaultNav ={
-			header: this.components.headerCentered,
+			header: this.components.headerDropdown,
 			footer: this.components.footerMain
 		};
 	},

@@ -15,10 +15,19 @@
 			<!--{{appTitle}}-->
 			<div style='padding-top: 1em;'>Automated Inspection Systems, Inc.</div>
 		</div>
-		<div ng-repeat='button in nav.buttons.left' class='inline-block nav-header-button-cont {{button.classes.cont}}'>
-			<a ng-if='button.href' class='nav-header-button' ng-href = '{{button.href}}' ng-bind-html='button.html'></a>
-			<div ng-if='button.click' class='nav-header-button' ng-click = 'button.click()' ng-bind-html='button.html'></div>
-			<div ng-if='button.dropdown && button.dropdown.buttons && button.dropdown.buttons.length >0' ng-click='button.dropdown.visible =!button.dropdown.visible' class='nav-header-button btn-link' ng-bind-html='button.html'></div>
+		<div ng-repeat='button in nav.buttons.left' class='inline-block nav-header-button-cont  {{button.classes.cont}}'>
+			<a ng-if='button.href' class='nav-header-button nav-header-icon-button' ng-href = '{{button.href}}'>
+				<i class='nav-header-icon-button-icon {{button.icon}}'></i>
+				<div class='nav-header-icon-button-text' ng-bind-html='button.iconHtml'></div>
+			</a>
+			<div ng-if='button.click' class='nav-header-button nav-header-icon-button' ng-click = 'button.click()'>
+				<i class='nav-header-icon-button-icon {{button.icon}}'></i>
+				<div class='nav-header-icon-button-text' ng-bind-html='button.iconHtml'></div>
+			</div>
+			<div ng-if='button.dropdown && button.dropdown.buttons && button.dropdown.buttons.length >0' ng-click='button.dropdown.visible =!button.dropdown.visible' class='nav-header-button btn-link'>
+				<i class='nav-header-icon-button-icon {{button.icon}}'></i>
+				<div class='nav-header-icon-button-text' ng-bind-html='button.iconHtml'></div>
+			</div>
 			<div class='nav-header-dropdown' ng-if='button.dropdown && button.dropdown.buttons && button.dropdown.buttons.length >0' ng-show='button.dropdown.visible'>
 				<div ng-repeat='dropdownButton in button.dropdown.buttons' class='{{dropdownButton.classes.cont}}'>
 					<a ng-if='dropdownButton.href' class='nav-header-button' ng-href = '{{dropdownButton.href}}' ng-bind-html='dropdownButton.html'></a>
@@ -31,9 +40,18 @@
 	<div class='flex1'>&nbsp;</div>
 	<div class='nav-header-right-cont'>
 		<div ng-repeat='button in nav.buttons.right' class='inline-block nav-header-button-cont {{button.classes.cont}}'>
-			<a ng-if='button.href' class='nav-header-button' ng-href = '{{button.href}}' ng-bind-html='button.html'></a>
-			<div ng-if='button.click' class='nav-header-button' ng-click = 'button.click()' ng-bind-html='button.html'></div>
-			<div ng-if='button.dropdown && button.dropdown.buttons && button.dropdown.buttons.length >0' ng-click='button.dropdown.visible =!button.dropdown.visible' class='nav-header-button btn-link' ng-bind-html='button.html'></div>
+			<a ng-if='button.href' class='nav-header-button nav-header-icon-button' ng-href = '{{button.href}}'>
+				<i class='nav-header-icon-button-icon {{button.icon}}'></i>
+				<div class='nav-header-icon-button-text' ng-bind-html='button.iconHtml'></div>
+			</a>
+			<div ng-if='button.click' class='nav-header-button nav-header-icon-button' ng-click = 'button.click()'>
+				<i class='nav-header-icon-button-icon {{button.icon}}'></i>
+				<div class='nav-header-icon-button-text' ng-bind-html='button.iconHtml'></div>
+			</div>
+			<div ng-if='button.dropdown && button.dropdown.buttons && button.dropdown.buttons.length >0' ng-click='button.dropdown.visible =!button.dropdown.visible' class='nav-header-button btn-link'>
+				<i class='nav-header-icon-button-icon {{button.icon}}'></i>
+				<div class='nav-header-icon-button-text' ng-bind-html='button.iconHtml'></div>
+			</div>
 			<div class='nav-header-dropdown' ng-if='button.dropdown && button.dropdown.buttons && button.dropdown.buttons.length >0' ng-show='button.dropdown.visible'>
 				<div ng-repeat='dropdownButton in button.dropdown.buttons' class='{{dropdownButton.classes.cont}}'>
 					<a ng-if='dropdownButton.href' class='nav-header-button' ng-href = '{{dropdownButton.href}}' ng-bind-html='dropdownButton.html'></a>
